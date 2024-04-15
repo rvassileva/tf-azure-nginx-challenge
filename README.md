@@ -17,5 +17,10 @@ To fulfill the requirements of this challenge, the following main resources were
 - **Load balancer** - located in public subnet
 - **Backend pool** associations - for the connection between the load balancer and the web server
 
+### Refactoring to modules
 
+The code was refactored and all resources were separated into three modules - networking, load-balancer and compute module.
 
+- **Networking** - provisions resources like subnets, public IPs, security groups, network interfaces
+- **Compute** - provisions the VM resource
+- **Load Balancer** - provisions the load balancer related resources including its public IP, backend pools, probe, rules, etc. 
