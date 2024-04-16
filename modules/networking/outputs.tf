@@ -22,3 +22,10 @@ output "ip_configuration_name" {
   value = azurerm_network_interface.websrv_net_interface.ip_configuration[0].name
 }
 
+output "websrv_rg" {
+ value = azurerm_resource_group.websrv_rg.name 
+}
+
+output "location" {
+  value = azurerm_resource_group.websrv_rg.location
+}

@@ -2,8 +2,8 @@
 # Create virtual machine in the private subnet with cloud-init config
 resource "azurerm_linux_virtual_machine" "websrv_instance" {
   name                = var.instance_name
-  resource_group_name = var.rg_name
-  location            = var.location
+  resource_group_name = var.rg_name 
+  location            = var.location 
   size                = var.vm_size
   admin_username      = var.admin_username
   network_interface_ids = [var.network_interface_ids]

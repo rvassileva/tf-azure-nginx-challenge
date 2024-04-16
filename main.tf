@@ -29,8 +29,8 @@ module "networking" {
 
 module "compute" {
   source                = "./modules/compute"
-  location              = var.location
-  rg_name               = var.rg_name
+  location              = module.networking.location
+  rg_name               = module.networking.websrv_rg
   instance_name         = var.instance_name
   vm_size               = var.vm_size
   admin_username        = var.admin_username
@@ -39,8 +39,8 @@ module "compute" {
 
 module "load-balancer" {
   source                = "./modules/load-balancer"
-  location              = var.location
-  rg_name               = var.rg_name
+  location              = module.networking.location
+  rg_name               = module.networking.websrv_rg
   lb_name               = var.lb_name
   pub_ip_config         = var.pub_ip_config
   address_pool_name     = var.address_pool_name
